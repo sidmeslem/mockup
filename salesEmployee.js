@@ -14,6 +14,16 @@ const salesEmployeeList = [
 
 app.use(express.json())
 
+// Add Access Control Allow Origin headers
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "https://mockup-pqp1.onrender.com");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    next();
+  });
+
 const createPost = (req, res, next) => {
     console.log('MESSAGE RECEIVED FROM EBX')
     next()
@@ -48,5 +58,5 @@ router.get('/salesEmployee', createPost, function(req, res){
 app.use('/', router)
 
 app.listen(PORT, () => {
-    console.log(`server ready \n\n[HR Mockup]\n`)
+    console.log(`server ready \n\n[SAP HR]\n`)
 })
