@@ -4,6 +4,8 @@ const router = express.Router()
 const app = express()
 const PORT = process.env.PORT || 8087
 
+var cors = require('cors')
+
 const salesEmployeeList = [
     {hrMatricule: "46379313", firstName: "Manon", lastName: "Madeleine"},
     {hrMatricule: "86244356", firstName: "Maxime", lastName: "Marin"},
@@ -13,16 +15,7 @@ const salesEmployeeList = [
 ]
 
 app.use(express.json())
-
-// Add Access Control Allow Origin headers
-app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "https://mockup-pqp1.onrender.com");
-    res.header(
-      "Access-Control-Allow-Headers",
-      "Origin, X-Requested-With, Content-Type, Accept"
-    );
-    next();
-  });
+app.use(cors())
 
 const createPost = (req, res, next) => {
     console.log('MESSAGE RECEIVED FROM EBX')
@@ -58,5 +51,5 @@ router.get('/salesEmployee', createPost, function(req, res){
 app.use('/', router)
 
 app.listen(PORT, () => {
-    console.log(`server ready \n\n[SAP HR]\n`)
+    console.log(`server ready \n\n[HR Mockup]\n`)
 })
