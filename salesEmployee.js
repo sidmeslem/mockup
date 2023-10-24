@@ -26,7 +26,7 @@ app.use('/', router)
 
 app.listen(PORT, () => {
     console.log(
-        `server ready at http://localhost:${PORT}\n\n[SAP HR]\n`
+        `server ready \n\n[SAP HR]\n`
     )
 })
 
