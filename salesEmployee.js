@@ -15,7 +15,7 @@ const salesEmployeeList = [
 app.use(express.json())
 
 const createPost = (req, res, next) => {
-    console.log('MESSAGE RECEIVED FROM EBX\n')
+    console.log('MESSAGE RECEIVED FROM EBX')
     next()
 }
 
@@ -26,17 +26,12 @@ router.get('/getList', function(req, res) {
 
 router.get('/salesEmployee', createPost, function(req, res){
     console.log("HR Matricule received : " + req.query.hrMatricule);
-
     var found = false;
     for(let i = 0; i < salesEmployeeList.length; i++) {
         let obj = salesEmployeeList[i];
-        if (obj["hrMatricule"] == req.query.hrMatricule) {
+        if ("\""+obj["hrMatricule"]+"\"" === req.query.hrMatricule) {
             found = true;
-            res.json({
-                "hrMatricule": req.query.hrMatricule,
-                "firstName": "Hello",
-                "lastName": "World",
-            })
+            res.json(obj)
         }
     }
 
@@ -53,5 +48,5 @@ router.get('/salesEmployee', createPost, function(req, res){
 app.use('/', router)
 
 app.listen(PORT, () => {
-    console.log(`server ready \n\n[SAP HR]\n`)
+    console.log(`server ready \n\n[HR Mockup]\n`)
 })
