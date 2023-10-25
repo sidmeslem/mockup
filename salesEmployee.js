@@ -7,11 +7,11 @@ const PORT = process.env.PORT || 8087
 var cors = require('cors')
 
 const salesEmployeeList = [
-    {hrMatricule: "46379313", firstName: "Manon", lastName: "Madeleine"},
-    {hrMatricule: "86244356", firstName: "Maxime", lastName: "Marin"},
-    {hrMatricule: "18257025", firstName: "Alex", lastName: "Rolland"},
-    {hrMatricule: "66537895", firstName: "Chloé", lastName: "Odile"},
-    {hrMatricule: "40093261", firstName: "Frank", lastName: "Marcel"},
+    {hrMatricule: "46379313", firstName: "Manon", lastName: "Madeleine", email: "test", oaPassId: "test", jobRole: "test", directManagerHrMatriculeNumber: "test", division: "10", country: "FR", countryCode: "FR", hrStatus: "active"},
+    {hrMatricule: "86244356", firstName: "Maxime", lastName: "Marin", email: "test", oaPassId: "test", jobRole: "test", directManagerHrMatriculeNumber: "test", division: "10", country: "FR", countryCode: "FR", hrStatus: "active"},
+    {hrMatricule: "18257025", firstName: "Alex", lastName: "Rolland", email: "test", oaPassId: "test", jobRole: "test", directManagerHrMatriculeNumber: "test", division: "10", country: "FR", countryCode: "FR", hrStatus: "active"},
+    {hrMatricule: "66537895", firstName: "Chloé", lastName: "Odile", email: "test", oaPassId: "test", jobRole: "test", directManagerHrMatriculeNumber: "test", division: "10", country: "FR", countryCode: "FR", hrStatus: "active"},
+    {hrMatricule: "40093261", firstName: "Frank", lastName: "Marcel", email: "test", oaPassId: "test", jobRole: "test", directManagerHrMatriculeNumber: "test", division: "10", country: "FR", countryCode: "FR", hrStatus: "active"},
 ]
 
 app.use(express.json())
