@@ -27,7 +27,7 @@ router.get('/getList', function(req, res) {
 })
 
 
-router.get('/salesEmployee', createPost, function(req, res){
+router.post('/salesEmployee', createPost, function(req, res){
     console.log("HR Matricule received : " + req.query.hrMatricule);
     var found = false;
     for(let i = 0; i < salesEmployeeList.length; i++) {
@@ -42,7 +42,7 @@ router.get('/salesEmployee', createPost, function(req, res){
         res.json({
             "hrMatricule": req.query.hrMatricule,
             "firstName": "Not found",
-            "lastName": "Not found",
+            "lastName": "Not found"
         })
     } 
 })
