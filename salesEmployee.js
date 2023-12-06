@@ -32,7 +32,7 @@ router.post('/salesEmployee', createPost, function(req, res){
     var found = false;
     for(let i = 0; i < salesEmployeeList.length; i++) {
         let obj = salesEmployeeList[i];
-        if ("\""+obj["hrMatricule"]+"\"" === req.query.hrMatricule) {
+        if ("\""+obj["oaPassId"]+"\"" === req.query.hrMatricule) {
             found = true;
             res.json(obj)
         }
