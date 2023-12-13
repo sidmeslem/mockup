@@ -12,6 +12,11 @@ const salesEmployeeList = [
     {hrMatricule: "18257025", firstName: "Alex", lastName: "Rolland", email: "alex.rolland@email.com", oaPassId: "OA18257025", jobRole: "Business Training​", directManagerHrMatriculeNumber: "OA0000000001", division: "VL026|1", country: "FR", countryCode: "FR", hrStatus: "active"},
     {hrMatricule: "66537895", firstName: "Chloé", lastName: "Odile", email: "chloe.odile@email.com", oaPassId: "OA66537895", jobRole: "Business Training​", directManagerHrMatriculeNumber: "OA0000000001", division: "VL026|1", country: "FR", countryCode: "FR", hrStatus: "active"},
     {hrMatricule: "40093261", firstName: "Frank", lastName: "Marcel", email: "frank.marcel@email.com", oaPassId: "OA40093261", jobRole: "Business Training​", directManagerHrMatriculeNumber: "OA0000000001", division: "VL026|1", country: "FR", countryCode: "FR", hrStatus: "active"},
+    {hrMatricule: "88372990", firstName: "Pixel", lastName: "RONIN", email: "pixel.ronin@email.com", oaPassId: "OA99883319", jobRole: "Key Account Management", directManagerHrMatriculeNumber: "OA00000010", division: "VL026|1", country: "FR", countryCode: "FR", hrStatus: "active"},
+    {hrMatricule: "90097733", firstName: "Alexandre", lastName: "DELOIT", email: "alexandre.deloit@email.com", oaPassId: "OA76281902", jobRole: "Key Account Management", directManagerHrMatriculeNumber: "OA00000011", division: "VL026|2", country: "FR", countryCode: "FR", hrStatus: "active"},
+    {hrMatricule: "12009883", firstName: "Sarah", lastName: "NANCY", email: "sarah.nancy@email.com", oaPassId: "OA58201239", jobRole: "Sales Transversal Management", directManagerHrMatriculeNumber: "OA00000012", division: "VL026|3", country: "FR", countryCode: "FR", hrStatus: "active"},
+    {hrMatricule: "56388995", firstName: "Sandrine", lastName: "CANDY", email: "sandrine.candy@email.com", oaPassId: "OA01907629", jobRole: "National Category Expert", directManagerHrMatriculeNumber: "OA00000013", division: "VL026|4", country: "FR", countryCode: "FR", hrStatus: "active"},
+    {hrMatricule: "30982412", firstName: "Chopper", lastName: "PEACE", email: "chopper.peace@email.com", oaPassId: "OA51928374", jobRole: "Business Training", directManagerHrMatriculeNumber: "OA00000014", division: "VL026|3", country: "FR", countryCode: "FR", hrStatus: "active"},
 ]
 
 app.use(express.json())
