@@ -6,55 +6,139 @@ const PORT = process.env.PORT || 8087
 
 var cors = require('cors')
 
-const salesEmployeeList = [
-    {hrMatricule: "46379313", firstName: "Manon", lastName: "Madeleine", email: "manon.madeleine@email.com", oaPassId: "OA46379313", jobRole: "Business Training​", directManagerHrMatriculeNumber: "OA0000000001", division: "VL026|1", country: "FR", countryCode: "FR", hrStatus: "active"},
-    {hrMatricule: "86244356", firstName: "Maxime", lastName: "Marin", email: "maxime.marin@email.com", oaPassId: "OA86244356", jobRole: "Business Training​", directManagerHrMatriculeNumber: "OA0000000001", division: "VL026|1", country: "FR", countryCode: "FR", hrStatus: "active"},
-    {hrMatricule: "18257025", firstName: "Alex", lastName: "Rolland", email: "alex.rolland@email.com", oaPassId: "OA18257025", jobRole: "Business Training​", directManagerHrMatriculeNumber: "OA0000000001", division: "VL026|1", country: "FR", countryCode: "FR", hrStatus: "active"},
-    {hrMatricule: "66537895", firstName: "Chloé", lastName: "Odile", email: "chloe.odile@email.com", oaPassId: "OA66537895", jobRole: "Business Training​", directManagerHrMatriculeNumber: "OA0000000001", division: "VL026|1", country: "FR", countryCode: "FR", hrStatus: "active"},
-    {hrMatricule: "40093261", firstName: "Frank", lastName: "Marcel", email: "frank.marcel@email.com", oaPassId: "OA40093261", jobRole: "Business Training​", directManagerHrMatriculeNumber: "OA0000000001", division: "VL026|1", country: "FR", countryCode: "FR", hrStatus: "active"},
-    {hrMatricule: "88372990", firstName: "Pixel", lastName: "RONIN", email: "pixel.ronin@email.com", oaPassId: "OA99883319", jobRole: "Key Account Management", directManagerHrMatriculeNumber: "OA00000010", division: "VL026|1", country: "FR", countryCode: "FR", hrStatus: "active"},
-    {hrMatricule: "90097733", firstName: "Alexandre", lastName: "DELOIT", email: "alexandre.deloit@email.com", oaPassId: "OA76281902", jobRole: "Key Account Management", directManagerHrMatriculeNumber: "OA00000011", division: "VL026|2", country: "FR", countryCode: "FR", hrStatus: "active"},
-    {hrMatricule: "12009883", firstName: "Sarah", lastName: "NANCY", email: "sarah.nancy@email.com", oaPassId: "OA58201239", jobRole: "Sales Transversal Management", directManagerHrMatriculeNumber: "OA00000012", division: "VL026|3", country: "FR", countryCode: "FR", hrStatus: "active"},
-    {hrMatricule: "56388995", firstName: "Sandrine", lastName: "CANDY", email: "sandrine.candy@email.com", oaPassId: "OA01907629", jobRole: "National Category Expert", directManagerHrMatriculeNumber: "OA00000013", division: "VL026|4", country: "FR", countryCode: "FR", hrStatus: "active"},
-    {hrMatricule: "30982412", firstName: "Chopper", lastName: "PEACE", email: "chopper.peace@email.com", oaPassId: "OA51928374", jobRole: "Business Training", directManagerHrMatriculeNumber: "OA00000014", division: "VL026|3", country: "FR", countryCode: "FR", hrStatus: "active"},
+const territoryList = [
+    {
+        "territoryName": "Clip 'N Snip",
+        "brand": "C3",
+        "email": "clipnsnip@example.com",
+        "customer": "Clip 'N Snip",
+        "division": "20",
+        "salesOrganization": "M007"
+    },
+    {
+        "territoryName": "Shear Genius",
+        "brand": "C2",
+        "email": "sheargenius@example.com",
+        "customer": "Shear Genius",
+        "division": "40",
+        "salesOrganization": "M005"
+    },
+    {
+        "territoryName": "Great Clips",
+        "brand": "C5",
+        "email": "greatclips@example.com",
+        "customer": "Great Clips",
+        "division": "10",
+        "salesOrganization": "M009"
+    },
+    {
+        "territoryName": "Master Cuts",
+        "brand": "C4",
+        "email": "mastercuts@example.com",
+        "customer": "Master Cuts",
+        "division": "30",
+        "salesOrganization": "M002"
+    },
+    {
+        "territoryName": "Barber Bros",
+        "brand": "C1",
+        "email": "barberbros@example.com",
+        "customer": "Barber Bros",
+        "division": "20",
+        "salesOrganization": "M003"
+    },
+    {
+        "territoryName": "Trendy Trims",
+        "brand": "C3",
+        "email": "trendytrims@example.com",
+        "customer": "Trendy Trims",
+        "division": "10",
+        "salesOrganization": "M004"
+    },
+    {
+        "territoryName": "The Cut Above",
+        "brand": "C2",
+        "email": "thecutabove@example.com",
+        "customer": "The Cut Above",
+        "division": "40",
+        "salesOrganization": "M010"
+    },
+    {
+        "territoryName": "Elite Cuts",
+        "brand": "C5",
+        "email": "elitecuts@example.com",
+        "customer": "Elite Cuts",
+        "division": "30",
+        "salesOrganization": "M008"
+    },
+    {
+        "territoryName": "Salon Sensations",
+        "brand": "C4",
+        "email": "salonsensations@example.com",
+        "customer": "Salon Sensations",
+        "division": "10",
+        "salesOrganization": "M006"
+    },
+    {
+        "territoryName": "Hair Haven",
+        "brand": "C1",
+        "email": "hairhaven@example.com",
+        "customer": "Hair Haven",
+        "division": "20",
+        "salesOrganization": "M001"
+    },
+    {
+        "territoryName": "Supreme Scissors",
+        "brand": "C3",
+        "email": "supremescissors@example.com",
+        "customer": "Supreme Scissors",
+        "division": "30",
+        "salesOrganization": "M009"
+    },
+    {
+        "territoryName": "Stylish Cuts",
+        "brand": "C2",
+        "email": "stylishcuts@example.com",
+        "customer": "Stylish Cuts",
+        "division": "40",
+        "salesOrganization": "M008"
+    },
+    {
+        "territoryName": "Chop & Style",
+        "brand": "C5",
+        "email": "chopandstyle@example.com",
+        "customer": "Chop & Style",
+        "division": "10",
+        "salesOrganization": "M007"
+    },
+    {
+        "territoryName": "Barber's Paradise",
+        "brand": "C4",
+        "email": "barbersparadise@example.com",
+        "customer": "Barber's Paradise",
+        "division": "20",
+        "salesOrganization": "M006"
+    },
+    {
+        "territoryName": "Cutting Edge",
+        "brand": "C1",
+        "email": "cuttingedge@example.com",
+        "customer": "Cutting Edge",
+        "division": "30",
+        "salesOrganization": "M002"
+    }
 ]
+
 
 app.use(express.json())
 app.use(cors())
 
-const createPost = (req, res, next) => {
-    console.log('MESSAGE RECEIVED FROM EBX')
-    next()
-}
-
 router.get('/getList', function(req, res) {
-    res.json(salesEmployeeList)
+    res.json(territoryList)
 })
-
-
-router.post('/salesEmployee', createPost, function(req, res){
-    console.log("HR Matricule received : " + req.query.hrMatricule);
-    var found = false;
-    for(let i = 0; i < salesEmployeeList.length; i++) {
-        let obj = salesEmployeeList[i];
-        if ("\""+obj["oaPassId"]+"\"" === req.query.hrMatricule) {
-            found = true;
-            res.json(obj)
-        }
-    }
-
-    if (!found) {
-        res.json({
-            "hrMatricule": req.query.hrMatricule,
-            "firstName": "Not found",
-            "lastName": "Not found"
-        })
-    } 
-})
-
 
 app.use('/', router)
 
 app.listen(PORT, () => {
-    console.log(`server ready \n\n[HR Mockup]\n`)
+    console.log(`server ready \n\n[Territory Mockup]\n`)
 })
