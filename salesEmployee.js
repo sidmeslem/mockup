@@ -6,128 +6,453 @@ const PORT = process.env.PORT || 8087
 
 var cors = require('cors')
 
-const territoryList = [
+const territoryObject = {
+  "kind": "bigquery#queryResponse",
+  "schema": {
+    "fields": [
+      {
+        "name": "Territory_Name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "Brand",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "user_email",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "Account_Manager",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "Account_Business_Partner",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "Sales_Organization",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "clean_customer",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "distribution_channel",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "division",
+        "type": "STRING",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "Customer_pk",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "territory_pk",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+      }
+    ]
+  },
+  "jobReference": {
+    "projectId": "emea-fieldforce-gbl-emea-pd",
+    "jobId": "job_a3PUkzi2kqYssdQtfCbAiP7fWA9e",
+    "location": "EU"
+  },
+  "totalRows": "10",
+  "rows": [
     {
-        "territoryName": "Clip 'N Snip",
-        "brand": "C3",
-        "email": "clipnsnip@example.com",
-        "customer": "Clip 'N Snip",
-        "division": "20",
-        "salesOrganization": "M007"
+      "f": [
+        {
+          "v": "ES PPD 11113 DIEGO VOS"
+        },
+        {
+          "v": "C2"
+        },
+        {
+          "v": "diego.vos@loreal.com"
+        },
+        {
+          "v": null
+        },
+        {
+          "v": "Diego VOS"
+        },
+        {
+          "v": "M850"
+        },
+        {
+          "v": "10046797"
+        },
+        {
+          "v": "20"
+        },
+        {
+          "v": "20"
+        },
+        {
+          "v": "7319733654025139547"
+        },
+        {
+          "v": "-7040600191377254629"
+        }
+      ]
     },
     {
-        "territoryName": "Shear Genius",
-        "brand": "C2",
-        "email": "sheargenius@example.com",
-        "customer": "Shear Genius",
-        "division": "40",
-        "salesOrganization": "M005"
+      "f": [
+        {
+          "v": "ES PPD 11113 DIEGO VOS"
+        },
+        {
+          "v": "C2"
+        },
+        {
+          "v": "diego.vos@loreal.com"
+        },
+        {
+          "v": null
+        },
+        {
+          "v": "Diego VOS"
+        },
+        {
+          "v": "M850"
+        },
+        {
+          "v": "10044355"
+        },
+        {
+          "v": "20"
+        },
+        {
+          "v": "20"
+        },
+        {
+          "v": "5909491961051319440"
+        },
+        {
+          "v": "-2208018585804052766"
+        }
+      ]
     },
     {
-        "territoryName": "Great Clips",
-        "brand": "C5",
-        "email": "greatclips@example.com",
-        "customer": "Great Clips",
-        "division": "10",
-        "salesOrganization": "M009"
+      "f": [
+        {
+          "v": "ES PPD 11113 DIEGO VOS"
+        },
+        {
+          "v": "C2"
+        },
+        {
+          "v": "diego.vos@loreal.com"
+        },
+        {
+          "v": null
+        },
+        {
+          "v": "Diego VOS"
+        },
+        {
+          "v": "M850"
+        },
+        {
+          "v": "10048929"
+        },
+        {
+          "v": "20"
+        },
+        {
+          "v": "20"
+        },
+        {
+          "v": "332604527649082352"
+        },
+        {
+          "v": "5187119311983494135"
+        }
+      ]
     },
     {
-        "territoryName": "Master Cuts",
-        "brand": "C4",
-        "email": "mastercuts@example.com",
-        "customer": "Master Cuts",
-        "division": "30",
-        "salesOrganization": "M002"
+      "f": [
+        {
+          "v": "ES PPD 11113 DIEGO VOS"
+        },
+        {
+          "v": "C2"
+        },
+        {
+          "v": "diego.vos@loreal.com"
+        },
+        {
+          "v": null
+        },
+        {
+          "v": "Diego VOS"
+        },
+        {
+          "v": "M850"
+        },
+        {
+          "v": "10076427"
+        },
+        {
+          "v": "20"
+        },
+        {
+          "v": "20"
+        },
+        {
+          "v": "3590854574319959234"
+        },
+        {
+          "v": "-5432333059111818271"
+        }
+      ]
     },
     {
-        "territoryName": "Barber Bros",
-        "brand": "C1",
-        "email": "barberbros@example.com",
-        "customer": "Barber Bros",
-        "division": "20",
-        "salesOrganization": "M003"
+      "f": [
+        {
+          "v": "ES PPD 11113 DIEGO VOS"
+        },
+        {
+          "v": "C2"
+        },
+        {
+          "v": "diego.vos@loreal.com"
+        },
+        {
+          "v": null
+        },
+        {
+          "v": "Diego VOS"
+        },
+        {
+          "v": "M850"
+        },
+        {
+          "v": "10055923"
+        },
+        {
+          "v": "20"
+        },
+        {
+          "v": "20"
+        },
+        {
+          "v": "-6427028966223928210"
+        },
+        {
+          "v": "-6196857809375014840"
+        }
+      ]
     },
     {
-        "territoryName": "Trendy Trims",
-        "brand": "C3",
-        "email": "trendytrims@example.com",
-        "customer": "Trendy Trims",
-        "division": "10",
-        "salesOrganization": "M004"
+      "f": [
+        {
+          "v": "ES PPD 11113 DIEGO VOS"
+        },
+        {
+          "v": "C2"
+        },
+        {
+          "v": "diego.vos@loreal.com"
+        },
+        {
+          "v": null
+        },
+        {
+          "v": "Diego VOS"
+        },
+        {
+          "v": "M850"
+        },
+        {
+          "v": "10034026"
+        },
+        {
+          "v": "20"
+        },
+        {
+          "v": "20"
+        },
+        {
+          "v": "7568373842575491774"
+        },
+        {
+          "v": "200797795162464176"
+        }
+      ]
     },
     {
-        "territoryName": "The Cut Above",
-        "brand": "C2",
-        "email": "thecutabove@example.com",
-        "customer": "The Cut Above",
-        "division": "40",
-        "salesOrganization": "M010"
+      "f": [
+        {
+          "v": "ES PPD 11113 DIEGO VOS"
+        },
+        {
+          "v": "C2"
+        },
+        {
+          "v": "diego.vos@loreal.com"
+        },
+        {
+          "v": null
+        },
+        {
+          "v": "Diego VOS"
+        },
+        {
+          "v": "M850"
+        },
+        {
+          "v": "10000551"
+        },
+        {
+          "v": "20"
+        },
+        {
+          "v": "20"
+        },
+        {
+          "v": "6902472479562700602"
+        },
+        {
+          "v": "-7644948500782474902"
+        }
+      ]
     },
     {
-        "territoryName": "Elite Cuts",
-        "brand": "C5",
-        "email": "elitecuts@example.com",
-        "customer": "Elite Cuts",
-        "division": "30",
-        "salesOrganization": "M008"
+      "f": [
+        {
+          "v": "ES PPD 11113 DIEGO VOS"
+        },
+        {
+          "v": "C2"
+        },
+        {
+          "v": "diego.vos@loreal.com"
+        },
+        {
+          "v": null
+        },
+        {
+          "v": "Diego VOS"
+        },
+        {
+          "v": "M850"
+        },
+        {
+          "v": "10019784"
+        },
+        {
+          "v": "20"
+        },
+        {
+          "v": "20"
+        },
+        {
+          "v": "828164671512731466"
+        },
+        {
+          "v": "-6559015098892847682"
+        }
+      ]
     },
     {
-        "territoryName": "Salon Sensations",
-        "brand": "C4",
-        "email": "salonsensations@example.com",
-        "customer": "Salon Sensations",
-        "division": "10",
-        "salesOrganization": "M006"
+      "f": [
+        {
+          "v": "ES PPD 11113 DIEGO VOS"
+        },
+        {
+          "v": "C2"
+        },
+        {
+          "v": "diego.vos@loreal.com"
+        },
+        {
+          "v": null
+        },
+        {
+          "v": "Diego VOS"
+        },
+        {
+          "v": "M850"
+        },
+        {
+          "v": "10033069"
+        },
+        {
+          "v": "20"
+        },
+        {
+          "v": "20"
+        },
+        {
+          "v": "8172500252489157144"
+        },
+        {
+          "v": "-443188090615127846"
+        }
+      ]
     },
     {
-        "territoryName": "Hair Haven",
-        "brand": "C1",
-        "email": "hairhaven@example.com",
-        "customer": "Hair Haven",
-        "division": "20",
-        "salesOrganization": "M001"
-    },
-    {
-        "territoryName": "Supreme Scissors",
-        "brand": "C3",
-        "email": "supremescissors@example.com",
-        "customer": "Supreme Scissors",
-        "division": "30",
-        "salesOrganization": "M009"
-    },
-    {
-        "territoryName": "Stylish Cuts",
-        "brand": "C2",
-        "email": "stylishcuts@example.com",
-        "customer": "Stylish Cuts",
-        "division": "40",
-        "salesOrganization": "M008"
-    },
-    {
-        "territoryName": "Chop & Style",
-        "brand": "C5",
-        "email": "chopandstyle@example.com",
-        "customer": "Chop & Style",
-        "division": "10",
-        "salesOrganization": "M007"
-    },
-    {
-        "territoryName": "Barber's Paradise",
-        "brand": "C4",
-        "email": "barbersparadise@example.com",
-        "customer": "Barber's Paradise",
-        "division": "20",
-        "salesOrganization": "M006"
-    },
-    {
-        "territoryName": "Cutting Edge",
-        "brand": "C1",
-        "email": "cuttingedge@example.com",
-        "customer": "Cutting Edge",
-        "division": "30",
-        "salesOrganization": "M002"
+      "f": [
+        {
+          "v": "ES PPD 11113 DIEGO VOS"
+        },
+        {
+          "v": "C2"
+        },
+        {
+          "v": "diego.vos@loreal.com"
+        },
+        {
+          "v": null
+        },
+        {
+          "v": "Diego VOS"
+        },
+        {
+          "v": "M850"
+        },
+        {
+          "v": "10001176"
+        },
+        {
+          "v": "20"
+        },
+        {
+          "v": "20"
+        },
+        {
+          "v": "-9114780413956646372"
+        },
+        {
+          "v": "-4057966869336422957"
+        }
+      ]
     }
-]
+  ],
+  "totalBytesProcessed": "7652138",
+  "jobComplete": true,
+  "cacheHit": false,
+  "queryId": "job_a3PUkzi2kqYssdQtfCbAiP7fWA9e",
+  "jobCreationReason": {
+    "code": "REQUESTED"
+  }
+}
 
 
 app.use(express.json())
