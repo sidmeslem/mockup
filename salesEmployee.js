@@ -445,6 +445,8 @@ const territoryObject = {
       ]
     },
     {
+      "f": [
+        {
           "v": "ES PPD 24112 JUAN ARCA"
         },
         {
@@ -820,7 +822,7 @@ const territoryObject = {
   "jobCreationReason": {
     "code": "REQUESTED"
   }
-  }
+}
 
 
 app.use(express.json())
