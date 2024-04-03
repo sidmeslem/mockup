@@ -459,7 +459,7 @@ app.use(express.json())
 app.use(cors())
 
 router.get('/getList', function(req, res) {
-    res.json(territoryList)
+    res.json(territoryObject)
 })
 
 app.use('/', router)
