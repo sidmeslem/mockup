@@ -783,7 +783,7 @@ const territoryObject = {
           "v": "ES PPD 24112 JUAN ARCA"
         },
         {
-          "v": "C2"
+          "v": "C4"
         },
         {
           "v": "juan.arca@loreal.com"
@@ -798,7 +798,7 @@ const territoryObject = {
           "v": "M850"
         },
         {
-          "v": "10001176"
+          "v": "10033069"
         },
         {
           "v": "20"
